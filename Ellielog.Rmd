@@ -1,0 +1,60 @@
+Ellie's Log
+========================================================
+My daughter, ellie, was born in January. Since her birth, we have been keeping detailed records of her sleep, feeding and diapers. In honor of QS2012, I digitized our log and have put together some plots of the key variables that we measured. I would love ideas and feedback on where to go next. 
+<a href="http://imgur.com/4OQqA"><img src="http://i.imgur.com/4OQqA.jpg" title="Hosted by imgur.com" alt="" width="200" /></a>
+
+```{r setup, results='hide', warning=FALSE}
+setwd("~/Desktop/Dropbox/EllieLog/")
+require(ggplot2)
+require(reshape2)
+
+Ellielog = read.csv("Ellielog.csv")
+dates = seq(from=as.Date("2012-01-19"), to=as.Date("2012-09-11"), by="day")
+Ellielog$Date=dates
+Ellielog$nightSleep[80] = 9.75
+Ellielog$daySleep[37] = 4.25
+Ellielog$daySleep[38] = 4.25
+tmp = melt(Ellielog, id.vars="Date")
+```
+## Sleep
+```{r fig.width=8, fig.height=6, results='hide', warning=FALSE}
+qplot(Date, LSP, data=Ellielog, geom=c("point", "smooth"), main="Longest Sleep Period (hours)")
+```
+
+```{r fig.width=8, fig.height=6, results='hide', warning=FALSE}
+qplot(Date, nightSleep, data=Ellielog, geom=c("point", "smooth"), main="Night time sleep (hours)")
+```
+```{r fig.width=8, fig.height=6, results='hide', warning=FALSE}
+qplot(Date, daySleep, data=Ellielog, geom=c("point", "smooth"), main="Daytime sleep (hours)")
+```
+```{r fig.width=8, fig.height=6, results='hide', warning=FALSE}
+qplot(Date, nightSleep+daySleep, data=Ellielog, geom=c("point", "smooth"), main="Total sleep (hours)")
+```
+```{r fig.width=8, fig.height=6, results='hide', warning=FALSE}
+qplot(Date, naps, data=Ellielog, geom=c("point", "smooth"), main = "Number of naps")
+```
+```{r fig.width=8, fig.height=6, results='hide', warning=FALSE}
+qplot(Date, longestNap, data=Ellielog, geom=c("point", "smooth"), main="Longest Nap (hours)")
+```
+
+## Diapers
+```{r fig.width=8, fig.height=6, results='hide', warning=FALSE}
+qplot(Date, P, data=Ellielog, geom=c("point", "smooth"), main="Number of poop diapers")
+```
+
+## Feedings
+
+```{r fig.width=8, fig.height=6, results='hide', warning=FALSE}
+qplot(Date, feedings, data=Ellielog, geom=c("point", "smooth"), main="Number of feedings")
+```
+```{r fig.width=8, fig.height=6, results='hide', warning=FALSE}
+qplot(Date, bottles, data=Ellielog, geom=c("point", "smooth"), main="Number of bottle feedings")
+```
+```{r fig.width=8, fig.height=6, results='hide', warning=FALSE}
+qplot(Date, longestBF, data=Ellielog, geom=c("point", "smooth"), main="Longest Breastfeeding (minutes)")
+```
+```{r fig.width=8, fig.height=6, results='hide', warning=FALSE}
+qplot(Date, solids, data=Ellielog, geom=c("point", "smooth"), main="Number of solids feedings")
+```
+
+<a href="http://imgur.com/bFLFG"><img src="http://i.imgur.com/bFLFG.jpg" title="Hosted by imgur.com" alt="" width="200" /></a>

@@ -1,0 +1,16 @@
+Metadata Ellie's log
+Each row is from 6pm on start date to 6pm next day
+
+Date				datetime	start date
+# bottles			int			count of feedings with bottle
+# feedings			int			count of total number of feedings
+longest BF			num			minutes in the longest breastfeeding
+# solids			int			count of feedings with solid foods
+new solid?			bin			was there a first time solid food today?
+# P					int			count of poopy diapers
+night				num			hours of sleep between 6pm-6am, rounded to quarter hr
+day					num			hours of sleep between 6am-6pm, rounded to quarter hr
+# night wakings		int			number of wakings/interventions between 6pm and 6am
+LSP					num			hours in longest night sleep period without intervention
+# naps				int			number of naps
+longest nap			num			minutes in longest nap

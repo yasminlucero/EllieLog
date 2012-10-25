@@ -1,0 +1,69 @@
+1977 NCHS Growth Chart Equations
+ 
+
+Instructions for Using the Coefficients for the 1977 NCHS Growth Charts
+ 
+
+Each percentile curve on each growth chart is defined by a unique group of coefficients.
+
+Coefficients for selected percentile lines [TXT - 21 KB]
+ 
+
+The coefficients are in scientific notation (for example, 0.240000D 02 is really 24.0000). The digits after the letter D indicate how many positions the decimal point should be moved to the right or left. A negative number indicates the decimal point should be moved to the left
+
+(e.g., 0.2400000D-02 is really .00240000).
+
+In the table, the first column is the x-axis value and the next four columns refer to the coefficients needed to define the y-axis value on the growth curve using the third order polynomial spline equations which define the curves. The last 4 columns (sex, age, percentile, chart) determine which curve is being defined:
+
+ 
+
+Sex
+M=male
+F=female
+
+ 
+
+Age codes
+1=0-36 moths
+2=2-18 years
+3=2-10.0 years
+4=2-11.5 years
+
+ 
+
+Percentile
+5=5th
+10=10th
+25=25th
+50=50th
+75=75th
+90=90th
+95=95th
+
+ 
+
+Chart codes
+1=length-for-age
+2=weight-for-age
+3=weight-for-length
+4=head circumference-for-age
+5=stature-for-age
+6=weight-for-stature
+
+ 
+
+The first three lines define the 5th percentile curve of length for age for males 0-36 months of age. The first value on the line refers to the x-axis variable (in this case, age in months). In the example, the first line has 0.0, the second has 9.0, and the third has 24.0. This means that you should use the first line's values for ages 0-8 months, the second line for ages 9-23 months, and the third line for ages 24-36 months to find the 5th percentile value for length for age of males 0-36 months.
+
+Each of the four other values refers to the constants for the polynomial equation
+
+Y = constant + B(1)*X + B(2)*X**2 + B(3)*X**3.
+
+For example, if you wanted to know the fifth percentile for length for an 18-month old male, you would use the constants defined on the second line. It would be defined as:
+
+Y = 68.0368 + 1.33232*(18-9) - .0397275*(18-9)**2 +
+
+0.000958204*(18-9)**3
+
+If you wanted the 5th percentile value for length for a 28-month-old male you would use the coefficients on the third line. The X in the equation is age minus the value in the first column, here it is 18-9. This principle may be applied to each percentile curve for each chart. Remember that only the seven selected percentiles are calculated and not any others.
+
+For example, there are no definitions for the 15th percentile or the 3rd percentile. Remember also that the x-axis is always age in months or height in centimeters, depending on the chart being used. No other values should be used in the equations.

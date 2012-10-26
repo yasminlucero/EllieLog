@@ -173,6 +173,17 @@ qplot(nightSleep, daySleep, data = Ellielog, color = age) + annotate("segment",
 ![plot of chunk unnamed-chunk-9](figure/unnamed-chunk-9.png) 
 
 
+```r
+qplot(Date, nightWakings, data = Ellielog, geom = c("point", "smooth"))
+```
+
+```
+## geom_smooth: method="auto" and size of largest group is <1000, so using
+## loess. Use 'method = x' to change the smoothing method.
+```
+
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10.png) 
+
 ## Diapers
 
 ```r
@@ -184,7 +195,7 @@ qplot(Date, P, data = Ellielog, geom = c("point", "smooth"), main = "Number of p
 ## loess. Use 'method = x' to change the smoothing method.
 ```
 
-![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10.png) 
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11.png) 
 
 
 ## Feedings
@@ -198,7 +209,7 @@ qplot(Date, longestBF, data = Ellielog, geom = c("point", "smooth"), main = "Lon
 ## loess. Use 'method = x' to change the smoothing method.
 ```
 
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11.png) 
+![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12.png) 
 
 
 
@@ -213,7 +224,7 @@ qplot(Date, feedings, data = Ellielog, geom = c("point", "smooth"), main = "Numb
 ## loess. Use 'method = x' to change the smoothing method.
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12.png) 
+![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13.png) 
 
 
 ```r
@@ -225,7 +236,7 @@ qplot(Date, bottles, data = Ellielog, geom = c("point", "smooth"), main = "Numbe
 ## loess. Use 'method = x' to change the smoothing method.
 ```
 
-![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13.png) 
+![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14.png) 
 
 
 ```r
@@ -237,7 +248,7 @@ qplot(Date, longestBF, data = Ellielog, geom = c("point", "smooth"), main = "Lon
 ## loess. Use 'method = x' to change the smoothing method.
 ```
 
-![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14.png) 
+![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15.png) 
 
 
 ```r
@@ -249,7 +260,16 @@ qplot(Date, solids, data = Ellielog, geom = c("point", "smooth"), main = "Number
 ## loess. Use 'method = x' to change the smoothing method.
 ```
 
-![plot of chunk unnamed-chunk-15](figure/unnamed-chunk-15.png) 
+![plot of chunk unnamed-chunk-16](figure/unnamed-chunk-16.png) 
+
+## Teething
+
+```r
+qplot(Date, painkiller, data = Ellielog[-c(1:200), ], geom = c("point", "line"))
+```
+
+![plot of chunk unnamed-chunk-17](figure/unnamed-chunk-17.png) 
+
 
 
 <a href="http://imgur.com/bFLFG"><img src="http://i.imgur.com/bFLFG.jpg" title="Hosted by imgur.com" alt="" width="200" /></a>
